@@ -98,6 +98,7 @@ public class ManejadorWeb extends DefaultHandler {
 			incidente.setFecha(lastContent);
 		} else if (localName.equals("description") && isItem) {
 			incidente.setDescripcion(lastContent);
+			incidente.setIcon(lastContent);
 		}
 	}
 	

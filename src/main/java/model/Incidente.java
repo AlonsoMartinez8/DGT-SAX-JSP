@@ -5,15 +5,17 @@ public class Incidente {
 	private String fecha;
 	private String link;
 	private String descripcion;
+	private String icon;
 	public Incidente() {
 		super();
 	}
-	public Incidente(String causa, String fecha, String link, String descripcion) {
+	public Incidente(String causa, String fecha, String link, String descripcion, String icon) {
 		super();
 		this.causa = causa;
 		this.fecha = fecha;
 		this.link = link;
 		this.descripcion = descripcion;
+		this.icon = icon;
 	}
 	public String getCausa() {
 		return causa;
@@ -33,7 +35,6 @@ public class Incidente {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -48,8 +49,23 @@ public class Incidente {
 		}
 		this.descripcion = content;
 	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String descripcion) {
+		String icon = "https://infocar.dgt.es/etraffic/";
+		String img = "";
+		int indexStart, indexEnd;
+		
+		indexStart = descripcion.indexOf("src='");
+		indexEnd = descripcion.indexOf(".png");
+		img = descripcion.substring(indexStart+5, indexEnd+4);
+		icon+=img;
+		
+		this.icon = icon;
+	}
 	@Override
 	public String toString() {
-		return "Incidente [\ncausa = " + causa + "\nfecha = " + fecha + "\nlink = " + link + "\ndescripcion = " + descripcion + "\n]\n";
+		return "Incidente [\ncausa = " + causa + "\nfecha = " + fecha + "\nlink = " + link + "\ndescripcion = " + descripcion + "\nicon = " + icon + "\n]\n";
 	}
 }

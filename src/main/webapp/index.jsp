@@ -101,12 +101,15 @@
                     <div class="card shadow" style="min-height: 300px;">
                         <div class="card-body">
                             <div class="row" style="min-height: 80px;">
-                                <h5 class=" col-8 card-title"><%= i.getCausa() %></h5>
+                                <h5 class=" col-6 card-title"><%= i.getCausa() %></h5>
                                 <p class=" col-4 card-text small text-end"><%= i.getFecha() %></p>
                             </div>
                             <a href="<%= i.getLink() %>" class="text-nowrap">Link</a>
                             <hr>
-                            <p class="card-text"><b>Descripcion :</b></p>
+                            <p class="card-text d-flex align-items-center justify-content-between">
+                            	<b>Descripcion :</b>
+                            	<img src="<%=i.getIcon()%>"/>
+                            </p>
                             <div style="max-height: 80px; overflow-y: scroll;">
                                 <p class="card-text"><%=i.getDescripcion()%></p>
                             </div>
